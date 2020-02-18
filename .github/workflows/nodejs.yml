@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: chekout and test 
+    - uses: actions/checkout@v2
+    - name: Use Node.js 8.10.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: 8.10.0
+    - name: install dependencies 
+      run: |
+        apt install npm
+        npm install eslint --save-dev
+    - name: Lint with eslint
+      run: ./node_modules/.bin/eslint add_test.js
+    - name: Test with nodejs test
+      run: node add_test.js  
+      env:
+        CI: true
