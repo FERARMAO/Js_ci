@@ -19,8 +19,10 @@ jobs:
         apt install npm
         npm install eslint --save-dev
     - name: Lint with eslint
-      run: ./node_modules/.bin/eslint add_test.js
+      run: | 
+        ./node_modules/.bin/eslint add_test.js
     - name: Test with nodejs test
-      run: node add_test.js  
+      run: | 
+        node add_test.js  
       env:
         CI: true
