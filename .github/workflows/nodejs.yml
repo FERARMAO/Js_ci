@@ -16,7 +16,6 @@ jobs:
         node-version: 8.10.0
     - name: install dependencies 
       run: |
-        apt install npm
         npm install eslint --save-dev
     - name: Lint with eslint
       run: | 
